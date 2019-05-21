@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+    <title>Prediction</title>
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">COMP9321</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Statistics Visualization</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/factor">Important Factors</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Predict</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron" style="margin-top: 3.5rem;">
+        <h1 class="display-4">Heart disease prediction</h1>
+    </div>
+
+    <div class="container">
+        <!-- Content here -->
+        <form>
+            <div class="form-group">
+                <label for="input_0">1. Age</label>
+                <input class="form-control" id="input_0" value="25" name="0">
+            </div>
+
+            <div class="form-group">
+                <label for="input_1">2. Sex</label>
+                <select class="form-control" id="input_1" name="1">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="input_2">3. Chest pain type</label>
+                <select class="form-control" id="input_2" name="2">
+                    <option value="1">typical angin</option>
+                    <option value="2">atypical angina</option>
+                    <option value="3">non-anginal pain</option>
+                    <option value="4">asymptomatic</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="input_3">4. Resting blood pressure</label>
+                <input class="form-control" id="input_3" value="120" name="3">
+            </div>
+
+            <div class="form-group">
+                <label for="input_4">5. Serum cholestoral in mg/dl</label>
+                <input class="form-control" id="input_4" value="220" name="4">
+            </div>
+
+            <div class="form-group">
+                <label for="input_5">6. Fasting blood sugar > 120 mg/dl</label>
+                <select class="form-control" id="input_5" name="5">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="input_6">7. Resting electrocardiographic results</label>
+                <select class="form-control" id="input_6" name="6">
+                    <option value="0">normal</option>
+                    <option value="1">having ST-T wave abnormality</option>
+                    <option value="2">showing probable or definite left ventricular hypertrophy by Estes’ criteria
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="input_7">8. Maximum heart rate achieved</label>
+                <input class="form-control" id="input_7" value="150" name="7">
+            </div>
+
+            <div class="form-group">
+                <label for="input_8">9. Exercise induced angina</label>
+                <select class="form-control" id="input_8" name="8">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="input_9">10. oldpeak = ST depression induced by exercise relative to rest</label>
+                <input class="form-control" id="input_9" value="1.2" name="9">
+            </div>
+
+            <div class="form-group">
+                <label for="input_10">11. The slope of the peak exercise ST segment</label>
+                <select class="form-control" id="input_10" name="10">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="input_11">12. Number of major vessels (0-3) colored by flourosopy</label>
+                <select class="form-control" id="input_11" name="11">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="input_12">13. thal(Thalassemia)</label>
+                <select class="form-control" id="input_12" name="12">
+                    <option value="3">normal</option>
+                    <option value="6">fixed defect</option>
+                    <option value="7">reversable defect</option>
+                </select>
+            </div>
+        </form>
+        <!-- <button id="submit-btn" class="btn btn-primary" href="javascript:void(0)">Predict2</button> -->
+        <button id="submit-btn" type="button" class="btn btn-primary">Predict&nbsp;<i id="submit-spinner" class="fa fa-spinner fa-spin"style="font-size:1rem; display: none;"></i></button>
+
+        <br>
+        <br>
+
+        <h1 id="result"></h1>
+        <br>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="static/scripts/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Important factors</title>
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">COMP9321</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Statistics Visualization</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Important Factors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/predict">Predict</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 4rem;">
+        <!-- Content here -->
+        <h3>Correlation Matrix with Heatmap</h3>
+        <p>Correlation states how the features are related to each other or the target variable.</p>
+        <p>Correlation can be positive (increase in one value of feature increases the value of the target variable) or
+            negative (increase in one value of feature decreases the value of the target variable)</p>
+        <p>Heatmap makes it easy to identify which features are most related to the target variable, we will plot
+            heatmap of correlated features using the seaborn library.</p>
+        <img src="static/images/corr.jpg" class="img-fluid">
+        <p>From the last row in the heat map, we can see the potential important factors related to heart dieases are:
+        </p>
+        <ol>
+            <li>thal(Thalassemia): 0.53</li>
+            <li>number of major vessels (0-3) colored by flourosopy: 0.46</li>
+            <li>oldpeak = ST depression induced by exercise relative to rest: 0.42</li>
+            <li>exercise induced angina: 0.42</li>
+            <li>chest pain type: 0.41</li>
+        </ol>
+
+        <h3>Decision Tree Feature Importance</h3>
+        <p>We can get the feature importance by using the feature importance property of the decision tree model.</p>
+        <p>Feature importance gives us a score for each feature of the data, the higher the score more important or
+            relevant is the feature towards the target attribute.</p>
+        <img src="static/images/feature_importance.jpg" class="img-fluid">
+        <p>From the last row in the heat map, we can see the potential important factors related to heart dieases are:
+        </p>
+        <ol>
+            <li>thal(Thalassemia)</li>
+            <li>number of major vessels (0-3) colored by flourosopy</li>
+            <li>exercise induced angina</li>
+            <li>chest pain type</li>
+            <li>maximum heart rate achieved</li>
+        </ol>
+
+        <h3>Statistical method</h3>
+        <p>Statistical tests can be used to select those features that have the strongest relationship with the target
+            atrribute.</p>
+        <p>The scikit-learn library provides the SelectKBest class that can be used with a suite of different
+            statistical tests to select a specific number of features.</p>
+        <pre>
+            Specs       Score
+            7                                  maximum heart rate  187.053104
+            11  number of major vessels (0-3) colored by flour...   82.730613
+            9                             oldpeak = ST depression   68.570533
+            12                                               thal   65.221093
+            8                                              angina   35.508090
+            0                                                 age   22.917697
+            4                                   serum cholestoral   20.855084
+            3                              resting blood pressure   16.707463
+            2                                     chest pain type   14.591587
+            6                resting electrocardiographic results    8.134652
+        </pre>
+
+        <h3>
+            Conclusion
+        </h3>
+        <p>From the above experiments, we find the following four attributes are most related to the target attribute.</p>
+        <ul>
+            <li>thal(Thalassemia)</li>
+            <li>number of major vessels (0-3) colored by flourosopy</li>
+            <li>oldpeak = ST depression induced by exercise relative to rest: 0.42</li>
+            <li>exercise induced angina</li>
+        </ul>
+        <br>
+        <p class="font-weight-lighter"><small>Reference: https://towardsdatascience.com/feature-selection-techniques-in-machine-learning-with-python-f24e7da3f36e</small></p>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
